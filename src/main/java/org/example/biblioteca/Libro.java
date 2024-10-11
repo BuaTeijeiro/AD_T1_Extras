@@ -2,12 +2,15 @@ package org.example.biblioteca;
 
 import java.io.Serializable;
 
-public class Libro extends Publicacion implements Prestable implements Serializable {
+public class Libro extends Publicacion implements Prestable, Serializable {
     private boolean prestado;
 
     public Libro(String isbn, String titulo, int year) {
         super(isbn, titulo, year);
         prestado = false;
+    }
+
+    public Libro() {
     }
 
     @Override
