@@ -20,4 +20,40 @@ public class Revista extends Publicacion implements Serializable {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder(getTitulo())
+                .append("\n")
+                .append(getIsbn())
+                .append("\n")
+                .append(String.valueOf(getYear()))
+                .append("\n")
+                .append(getNumero())
+                .toString();
+    }
 }
