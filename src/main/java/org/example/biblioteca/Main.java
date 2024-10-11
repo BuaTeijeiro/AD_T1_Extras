@@ -19,7 +19,6 @@ public class Main {
         Biblioteca bibliotecaCargada = Biblioteca.loadBiblioteca();
 
         System.out.println(bibliotecaCargada.countPublicaciones());
-        Revista publicacion = (Revista) bibliotecaCargada.getRevistas().get(0);
-        System.out.println(publicacion.getNumero());
+        System.out.println(bibliotecaCargada.getPublicaciones());
     }
 }

@@ -2,7 +2,7 @@ package org.example.biblioteca;
 
 import java.io.Serializable;
 
-public class Publicacion {
+public class Publicacion implements Serializable {
     public String isbn;
     public String titulo;
     public int year;
