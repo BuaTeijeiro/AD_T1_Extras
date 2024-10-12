@@ -18,7 +18,6 @@ public class Main {
 
         Biblioteca bibliotecaCargada = Biblioteca.loadBiblioteca();
 
-        System.out.println(bibliotecaCargada.countPublicaciones());
         System.out.println(bibliotecaCargada.getPublicaciones());
     }
 }

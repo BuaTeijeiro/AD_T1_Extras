@@ -38,7 +38,6 @@ public class Biblioteca {
         try (FileOutputStream fileEscritor = new FileOutputStream(LIBROS_FILE_URL);
              ObjectOutputStream escritor = new ObjectOutputStream(fileEscritor);){
             for (Publicacion publicacion : this.getLibros()) {
-                System.out.println(publicacion);
                 escritor.writeObject(publicacion);
             }
         } catch (IOException e){
@@ -69,7 +68,6 @@ public class Biblioteca {
              ObjectInputStream lector = new ObjectInputStream(fileLector);){
             while(fileLector.available()>0){
                 Object o = lector.readObject();
-                System.out.println(o.getClass().getName());
                 if(o instanceof Libro){
                     addPublicacion((Libro)o);
                 }
