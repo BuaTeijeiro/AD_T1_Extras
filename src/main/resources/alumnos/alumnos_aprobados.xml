@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alumnos>
+    <alumno>
+        <dni>28056640K</dni>
+        <nombre>XABIER VERA CARDENAS</nombre>
+        <media>8.25</media>
+        <edad>17</edad>
+        <repetidor>false</repetidor>
+    </alumno>
+    <alumno>
+        <dni>85786210M</dni>
+        <nombre>CARMELO ZAMORA CASAS</nombre>
+        <media>7.05</media>
+        <edad>16</edad>
+        <repetidor>false</repetidor>
+    </alumno>
+    <alumno>
+        <dni>91789103J</dni>
+        <nombre>MARIA PILAR CABRERA CALERO</nombre>
+        <media>9.34</media>
+        <edad>17</edad>
+        <repetidor>false</repetidor>
+    </alumno>
+    <alumno>
+        <dni>60407665M</dni>
+        <nombre>FLORENCIO SORIA MARCOS</nombre>
+        <media>6.85</media>
+        <edad>16</edad>
+        <repetidor>true</repetidor>
+    </alumno>
+    <alumno>
+        <dni>63092022D</dni>
+        <nombre>RAMON ROMERA RAMIREZ</nombre>
+        <media>9.5</media>
+        <edad>17</edad>
+        <repetidor>false</repetidor>
+    </alumno>
+    <alumno>
+        <dni>62098575R</dni>
+        <nombre>LEANDRO MEDINA HERAS</nombre>
+        <media>7.6</media>
+        <edad>17</edad>
+        <repetidor>false</repetidor>
+    </alumno>
+</alumnos>

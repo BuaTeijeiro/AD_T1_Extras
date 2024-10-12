@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alumnos>
+    <alumno>
+        <dni>11687639M</dni>
+        <nombre>GONZALO VALLEJO QUESADA</nombre>
+        <media>4.55</media>
+        <edad>16</edad>
+        <repetidor>true</repetidor>
+    </alumno>
+    <alumno>
+        <dni>60407665M</dni>
+        <nombre>FLORENCIO SORIA MARCOS</nombre>
+        <media>6.85</media>
+        <edad>16</edad>
+        <repetidor>true</repetidor>
+    </alumno>
+</alumnos>
