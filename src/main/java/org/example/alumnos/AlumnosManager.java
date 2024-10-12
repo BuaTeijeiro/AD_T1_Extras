@@ -13,6 +13,7 @@ public class AlumnosManager {
         for (Field field: fields){
             askField(newAlumno,field);
         }
+        newAlumno.store();
     }
 
     public static void askField(Alumno alumno, Field field){
@@ -34,13 +35,21 @@ public class AlumnosManager {
                     case "boolean":
                         field.set(alumno, Boolean.valueOf(value));
                         break;
+                    case "org.example.alumnos.DNI":
+                        DNI newDNI = DNI.createNewDNI(value);
+                        field.set(alumno, newDNI);
+                        break;
                     default:
                         field.set(alumno,value);
                         break;
                 }
                 keepGoing = false;
-            } catch (Exception e){
+            }  catch (RepeatedDNIException e){
+                System.out.println("El dni ya existe, vuelva a intentarlo");
+            } catch (NumberFormatException e){
                 System.out.println("No se trata de un valor correcto para el campo, vuelva a intentarlo");
+            } catch (Exception e){
+                System.out.println("Petó");
             }
         }
     }

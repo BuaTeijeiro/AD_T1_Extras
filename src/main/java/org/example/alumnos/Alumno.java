@@ -24,30 +24,28 @@ public class Alumno {
     private static String ALUMNOS_REPETIDORES_XML = "src/main/resources/alumnos/alumnos_repetidores.xml";
     private static List<Alumno> alumnos = new ArrayList<>();
 
-    public String dni;
+    public DNI dni;
     public String nombre;
     public int edad;
     public float notaMedia;
     public boolean repetidor;
 
-    public Alumno(String dni, String nombre, int edad, float notaMedia, boolean repetidor) {
+    public Alumno(DNI dni, String nombre, int edad, float notaMedia, boolean repetidor) {
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
         this.notaMedia = notaMedia;
         this.repetidor = repetidor;
-        this.alumnos.add(this);
     }
 
     public Alumno() {
-        this.alumnos.add(this);
     }
 
-    public String getDni() {
+    public DNI getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(DNI dni) {
         this.dni = dni;
     }
 
@@ -94,6 +92,10 @@ public class Alumno {
                 '}';
     }
 
+    public void store(){
+        alumnos.add(this);
+    }
+
     public static String getAlumnosXml(){
         return ALUMNOS_XML;
     }
@@ -108,6 +110,14 @@ public class Alumno {
 
     public static List<Alumno> getAllAlumnos(){
         return alumnos;
+    }
+
+    public static List<String> getAllDNI(){
+        List<String> dnis = new ArrayList<>();
+        for (Alumno alumno: getAllAlumnos()){
+            dnis.add(alumno.getDni().getNumero());
+        }
+        return dnis;
     }
 
     private static List<Alumno> filterAlumnosRepetidores(){
@@ -149,7 +159,7 @@ public class Alumno {
 
                 Element dniElement = document.createElement("dni");
                 alumnoElement.appendChild(dniElement);
-                dniElement.appendChild(document.createTextNode(alumno.getDni()));
+                dniElement.appendChild(document.createTextNode(alumno.getDni().getNumero()));
 
                 Element nombreElement = document.createElement("nombre");
                 alumnoElement.appendChild(nombreElement);

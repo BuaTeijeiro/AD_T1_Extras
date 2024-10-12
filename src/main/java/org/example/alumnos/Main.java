@@ -24,6 +24,8 @@ public class Main {
             }
         } catch (UnsuccesfulDocumentCreationException e){
             System.out.println("No se pudo cargar el fichero xml, compruebe que se halla en la ruta adecuada");
+        } catch (RepeatedDNIException e){
+            System.out.println("En los datos que se han intentado cargar hay dnis repetidos, compruébelos");
         }
 
     }

@@ -28,7 +28,7 @@ public class XmlAlumnosLoader {
         }
     }
 
-    public List<Alumno> loadAlumnos(Document document){
+    public List<Alumno> loadAlumnos(Document document) throws RepeatedDNIException{
         List<Alumno> alumnos = new ArrayList<>();
         NodeList dniNodes = document.getElementsByTagName("dni");
         NodeList nombreNodes = document.getElementsByTagName("nombre");
@@ -36,12 +36,14 @@ public class XmlAlumnosLoader {
         NodeList mediaNodes = document.getElementsByTagName("media");
         NodeList repetidorNodes = document.getElementsByTagName("repetidor");
         for(int i = 0; i < dniNodes.getLength(); i++){
-            String dni = dniNodes.item(i).getTextContent();
+            DNI dni = DNI.createNewDNI(dniNodes.item(i).getTextContent());
             String nombre = nombreNodes.item(i).getTextContent();
             int edad = Integer.parseInt(edadNodes.item(i).getTextContent());
             float media = Float.parseFloat(mediaNodes.item(i).getTextContent());
             boolean repetidor = Boolean.parseBoolean(repetidorNodes.item(i).getTextContent());
-            alumnos.add(new Alumno(dni, nombre, edad, media, repetidor));
+            Alumno newAlumno = new Alumno(dni, nombre, edad, media, repetidor);
+            alumnos.add(newAlumno);
+            newAlumno.store();
         }
         return alumnos;
     }

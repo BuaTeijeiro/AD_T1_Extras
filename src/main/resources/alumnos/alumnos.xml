@@ -63,4 +63,11 @@
         <edad>19</edad>
         <repetidor>true</repetidor>
     </alumno>
+    <alumno>
+        <dni>97110887B</dni>
+        <nombre>IZAN SAIZ GALVAN</nombre>
+        <media>7.26</media>
+        <edad>16</edad>
+        <repetidor>false</repetidor>
+    </alumno>
 </alumnos>
