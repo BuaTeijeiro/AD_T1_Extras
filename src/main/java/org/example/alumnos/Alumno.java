@@ -1,6 +1,8 @@
 package org.example.alumnos;
 
 public class Alumno {
+    private static String ALUMNOS_XML_URL = "src/main/resources/alumnos/alumnos.xml";
+
     private String dni;
     private String nombre;
     private int edad;
@@ -67,5 +69,9 @@ public class Alumno {
                 ", notaMedia=" + notaMedia +
                 ", repetidor=" + repetidor +
                 '}';
+    }
+
+    public static String getAlumnosXmlUrl(){
+        return ALUMNOS_XML_URL;
     }
 }
