@@ -14,7 +14,9 @@ public class Main {
             try {
                 menuPrincipal.addOption(1, "guardarAlumnosRepetidores", Alumno.class);
                 menuPrincipal.addOption(2, "guardarAlumnosAprobados", Alumno.class);
-                menuPrincipal.addOption(3, "salir");
+                menuPrincipal.addOption(3, "crearAlumno", AlumnosManager.class);
+                menuPrincipal.addOption(4, "showAllAlumnos", Alumno.class);
+                menuPrincipal.addOption(5, "guardarYSalir");
                 menuPrincipal.activate();
             } catch (NoSuchMethodException e){
                 System.out.println("No se ha podido configurar el menú correctamente");

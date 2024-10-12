@@ -14,4 +14,11 @@
         <edad>16</edad>
         <repetidor>true</repetidor>
     </alumno>
+    <alumno>
+        <dni>00000000T</dni>
+        <nombre>FELIPE GONZÁLEZ MUÑOZ</nombre>
+        <media>4.9</media>
+        <edad>19</edad>
+        <repetidor>true</repetidor>
+    </alumno>
 </alumnos>

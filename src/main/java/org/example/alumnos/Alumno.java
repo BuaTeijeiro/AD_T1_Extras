@@ -16,6 +16,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Alumno {
     private static String ALUMNOS_XML = "src/main/resources/alumnos/alumnos.xml";
@@ -23,11 +24,11 @@ public class Alumno {
     private static String ALUMNOS_REPETIDORES_XML = "src/main/resources/alumnos/alumnos_repetidores.xml";
     private static List<Alumno> alumnos = new ArrayList<>();
 
-    private String dni;
-    private String nombre;
-    private int edad;
-    private float notaMedia;
-    private boolean repetidor;
+    public String dni;
+    public String nombre;
+    public int edad;
+    public float notaMedia;
+    public boolean repetidor;
 
     public Alumno(String dni, String nombre, int edad, float notaMedia, boolean repetidor) {
         this.dni = dni;
@@ -39,6 +40,7 @@ public class Alumno {
     }
 
     public Alumno() {
+        this.alumnos.add(this);
     }
 
     public String getDni() {
@@ -84,8 +86,8 @@ public class Alumno {
     @Override
     public String toString() {
         return "Alumno{" +
-                "dni='" + dni +
-                ", nombre='" + nombre +
+                "dni=" + dni +
+                ", nombre=" + nombre +
                 ", edad=" + edad +
                 ", notaMedia=" + notaMedia +
                 ", repetidor=" + repetidor +
@@ -104,12 +106,20 @@ public class Alumno {
         return ALUMNOS_REPETIDORES_XML;
     }
 
+    public static List<Alumno> getAllAlumnos(){
+        return alumnos;
+    }
+
     private static List<Alumno> filterAlumnosRepetidores(){
         return alumnos.stream().filter(a -> a.isRepetidor()).toList();
     }
 
     private static List<Alumno> filterAlumnosAprobados(){
         return alumnos.stream().filter(a -> a.getNotaMedia() >= 5).toList();
+    }
+
+    public static void guardarTodosLosAlumnos(){
+        guardarAlumnosXML(getAllAlumnos(),getAlumnosXml());
     }
 
     public static void guardarAlumnosRepetidores(){
@@ -119,6 +129,12 @@ public class Alumno {
     public static void guardarAlumnosAprobados(){
         guardarAlumnosXML(filterAlumnosAprobados(),getAlumnosAprobadosXml());
     }
+
+    public static void showAllAlumnos(){
+        getAllAlumnos().forEach(System.out::println);
+        String pause = new Scanner(System.in).nextLine();
+    }
+
 
     public static void guardarAlumnosXML(List<Alumno> alumnos, String url){
         try {

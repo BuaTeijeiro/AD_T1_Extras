@@ -42,4 +42,11 @@
         <edad>17</edad>
         <repetidor>false</repetidor>
     </alumno>
+    <alumno>
+        <dni>53976108F</dni>
+        <nombre>DAVID BÚA TEIJEIRO</nombre>
+        <media>10.0</media>
+        <edad>17</edad>
+        <repetidor>false</repetidor>
+    </alumno>
 </alumnos>

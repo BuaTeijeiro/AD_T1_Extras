@@ -72,7 +72,8 @@ public class Menu {
 
     }
 
-    public void salir(){
+    public void guardarYSalir(){
+        Alumno.guardarTodosLosAlumnos();
         setActive(false);
     }
 
